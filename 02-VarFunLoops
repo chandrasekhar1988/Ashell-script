@@ -8,11 +8,7 @@ echo "-----------------------------------"
 
 # 2. ARRAYS (Storing a list of data)
 COURSES=("Linux" "Git" "Docker" "AWS")
-
-# Indexing starts at 0. So [0] is Linux.
 echo "First course in the list: ${COURSES[0]}"
-
-# [@Reference] prints all items in the array.
 echo "All courses available: ${COURSES[@]}"
 echo "-----------------------------------"
 
@@ -21,9 +17,6 @@ echo "-----------------------------------"
 # This function checks a score and decides if it's a pass or fail.
 check_status() {
     # '$1' represents the first argument passed into the function.
-    
-    # 4. CONDITIONS (If / Else logic)
-    # '-ge' stands for 'Greater than or Equal to'
     if [ $1 -ge 35 ]; then
         echo "Result: You passed the exam! (Score: $1)"
     else
@@ -31,14 +24,13 @@ check_status() {
     fi
 }
 
-
 # Let's call/use the function with different scores:
 check_status 40
 check_status 20
 echo "-----------------------------------"
 
 
-# 5. LOOPS (Doing a repetitive task automatically)
+# 4. LOOPS (Doing a repetitive task automatically)
 echo "Printing our course list using a 'for' loop:"
 
 for COURSE in "${COURSES[@]}"
