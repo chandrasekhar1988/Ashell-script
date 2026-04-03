@@ -5,25 +5,16 @@ LOGFILE="/tmp/$0-$TIMESTAMP.log"
 
 echo "script started executing at $TIMESTAMP" &>> $LOGFILE
 
-VALIDATE(){
-    if [ $1 -ne 0 ]
-    then
-        echo -e "$2 ... $R FAILED $N"
-    else
-        echo -e "$2 ... $G SUCCESS $N"
-    fi
-}
-
 if [ $ID -ne 0 ]
 then
     echo "ERROR:: Please run this script with root access"
     exit 1 # you can give other than 0
 else
     echo "You are root user"
-fi # fi means reverse of if, indicating condition end
+fi 
 
 yum install mysql -y
-
+# $? -special variable -stores exit status (0=successful,non-zero/1-255=Failed)
 if [ $? -ne 0 ]
 then
     echo "ERROR:: Installing MySQL is failed"
@@ -31,6 +22,16 @@ then
 else
     echo "Installing MySQL is SUCCESS"
 fi
+#&>> special operator used to send/redirect both standard output(regular messages) 
+# and standard error (error messages) of a command and append them to the end of a file.
 yum install mysql -y &>> $LOGFILE
 
-VALIDATE $? "Installing MySQL"
+VALIDATE $? "Validation_In the server,MySQL Installation is"
+VALIDATE(){
+    if [ $1 -ne 0 ]
+    then
+        echo -e "$2 *** $R FAILED $N"
+    else
+        echo -e "$2 *** $G SUCCESS $N"
+    fi
+}
