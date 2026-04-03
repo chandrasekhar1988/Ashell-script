@@ -1,5 +1,4 @@
 #!/bin/bash
-
 ID=$(id -u)
 echo "1.ID value is: ${ID}"
 echo '2.ID value not print if single quote given: ${ID}'
@@ -16,10 +15,12 @@ then
     echo -e "$R ERROR:: Please run this script with root access $N"
     exit 1 # you can give other than 0
 else
-    echo "1.You are root user"
-    echo -e "2.$G You are root user $N"
+    echo "3.You are root user" 
+    echo -e "4.You are $G root user"
+    #-e colors in the echo command.
+    echo -e "5.$G You are root user $N" 
     #$N: Resets the terminal color back to normal so subsequent text doesn't stay green.
-    echo -e "3.$G You are root user"
+    echo -e "6.$G You are root user"
 fi 
 
 
