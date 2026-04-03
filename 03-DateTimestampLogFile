@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# 1. Custom variables (Created by us)
+DATE=$(date +%F)
+TIMESTAMP=$(date +%T)
+LOGFILE="my_log_${DATE}.txt"
+
+# 2. Printing the values to the screen
+echo "----------------------------------------"
+echo "Script Name (\$0)       : $0"
+echo "Today's Date (DATE)    : $DATE"
+echo "Current Time (TIMESTAMP): $TIMESTAMP"
+echo "Log File Name (LOGFILE): $LOGFILE"
+echo "----------------------------------------"
+echo "Total Arguments (\$#)   : $#"
+echo "All Arguments (\$@)     : $@"
+echo "----------------------------------------"
+
+# 3. Writing a message to the log file
+echo "[$TIMESTAMP] Script was run successfully by user." >> "$LOGFILE"
+echo "Check your folder, a new log file '$LOGFILE' has been created!"
