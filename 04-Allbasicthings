@@ -1,7 +1,8 @@
 #!/bin/bash
 
 ID=$(id -u)
-echo 'ID value is: $ID'
+echo 'ID value is: ${ID}'
+
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
