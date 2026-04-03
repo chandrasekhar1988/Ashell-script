@@ -1,17 +1,14 @@
 #!/bin/bash
-
 # 1. VARIABLES (Storing a single piece of data)
 GREETING="Hello"
 echo "$GREETING! Let's learn Shell Scripting."
 echo "-----------------------------------"
-
 
 # 2. ARRAYS (Storing a list of data)
 COURSES=("Linux" "Git" "Docker" "AWS")
 echo "First course in the list: ${COURSES[0]}"
 echo "All courses available: ${COURSES[@]}"
 echo "-----------------------------------"
-
 
 # 3. FUNCTIONS (Reusable blocks of code)
 # This function checks a score and decides if it's a pass or fail.
